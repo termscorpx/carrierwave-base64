@@ -2,10 +2,13 @@
 
 [![Gem Version](https://badge.fury.io/rb/carrierwave-base64.svg)](http://badge.fury.io/rb/carrierwave-base64)
 [![Build Status](https://travis-ci.org/lebedev-yury/carrierwave-base64.svg?branch=master)](https://travis-ci.org/lebedev-yury/carrierwave-base64)
+[![Code Climate](https://codeclimate.com/github/lebedev-yury/carrierwave-base64/badges/gpa.svg)](https://codeclimate.com/github/lebedev-yury/carrierwave-base64)
 
 Upload files encoded as base64 to carrierwave.
 
 This small gem can be useful for API's that interact with mobile devices.
+
+As of version 2.3.0, this gem requires Ruby 2.0 or higher
 
 ## Installation
 
@@ -30,6 +33,14 @@ mount_base64_uploader :image, ImageUploader
 ```
 
 Now you can also upload files by passing an encoded base64 string to the attribute.
+
+## Setting the file name
+
+To set the file name for the uploaded files, use the `:file_name` option (without extention):
+
+```ruby
+mount_base64_uploader :image, ImageUploader, file_name: 'userpic'
+```
 
 ## Data format
 
